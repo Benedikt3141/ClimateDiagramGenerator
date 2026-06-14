@@ -82,8 +82,16 @@ def generate_climate_diagram():
     df = pd.read_csv(climate_data_file, sep=";", decimal=",")
 
     rain = df["Regen/Monat(mm)"].to_numpy()
+    sum_of_rain = rain.sum()
+
     temperature = df["Temperatur Aussen(℃)"].to_numpy()
+    mean_temperature = temperature.mean()
+
+    temperature = np.append(temperature, temperature[-1])
+    temperature = np.insert(temperature, 0, temperature[0])
+
     months = np.arange(1, 13)
+    months_extended = np.arange(0,14)
 
     plt.style.use("_mpl-gallery")
 
@@ -113,21 +121,29 @@ def generate_climate_diagram():
     )
 
     # Temperaturkurve
-    ax1.plot(months, temperature, color="red", linewidth=2.5, marker="o")
+    ax1.plot(months_extended, temperature, color="red", linewidth=2.5, marker="o")
 
     # Linke Achse = Temperatur
-    ax1.set_xlim(0.5, 12.5)
+    ax1.set_xlim(0, 13)
     ax1.set_xticks(np.arange(1, 13))
+    ax1.set_xticklabels(['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'])
     ax1.set_ylim(-15, 50)
     ax1.set_yticks(np.arange(-15, 51, 5))
-    ax1.set_ylabel("Temperatur (°C)")
+    ax1.set_yticklabels(np.arange(-15, 51, 5), color="red")
+    ax1.set_ylabel("Temperatur (°C)", color="red")
+    
 
     # Rechte Achse = Regen
     ax2 = ax1.secondary_yaxis(
         "right",
         functions=(lambda y: y * 2, lambda y: y / 2)
     )
-    ax2.set_ylabel("Regen (mm)")
+    ax2.set_ylabel("Rain (mm)", color="xkcd:blue")
+    ax2.tick_params(axis="y", colors="xkcd:blue")
+
+    plt.text(0, -10, f"{mean_temperature:.2f}°C", color="red")
+    plt.text(9.2, -10, f"{int(sum_of_rain)}mm", color="xkcd:blue")
+    plt.text(0.2, 40, "Bornheim(Germany)\n 120m a.s.l.")
 
     plt.savefig("climate_diagram.png", dpi=300, bbox_inches="tight")
     plt.close()
