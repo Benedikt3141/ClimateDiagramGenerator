@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 import csv
 
 month_average_file = "month_average.csv"
