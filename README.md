@@ -10,7 +10,7 @@ Using this script you can generate a climate diagram from your weatherstation da
 
 
 
-!\[Climate Diagram](https://github.com/Benedikt3141/ClimateDiagramGenerator/blob/master/climate\_diagram.png)
+![Climate Diagram](https://github.com/Benedikt3141/ClimateDiagramGenerator/blob/master/climate\_diagram.png)
 
 
 
@@ -77,7 +77,7 @@ run program via terminal or perfered IDE
 
 
 
-\[@benedikt3141](https://github.com/Benedikt3141)
+[@benedikt3141](https://github.com/Benedikt3141)
 
 
 
