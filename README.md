@@ -1,12 +1,12 @@
 # ClimateDiagramGenerator
 
-Procsses .csv data of German DNT weatherstation SD-data using Python
+Procsses '.csv' data of German DNT weatherstation SD-data using Python.
 
 
 
 ## Description
 
-Using this script you can generate a climate diagram from your weatherstation data. The .png diagram looks like this:
+This script generates a climate diagram from weather station data. The `.png` diagram looks like this:
 
 
 
@@ -16,11 +16,11 @@ Using this script you can generate a climate diagram from your weatherstation da
 
 ## Attention
 
-The formating signes are german standart. it may not work that well with internationl punctation
+The formatting signs are based on German standards. The script may not work correctly with international punctuation formats.
 
-Moreover the data files contain German Umlauts.
+Moreover, the data files may contain German umlauts.
 
-So please contribute!!!
+Contributions are welcome!
 
 
 
@@ -34,11 +34,12 @@ So please contribute!!!
 
 * Python 3.10 ++
 * Install libraries (Pandas, matplot, numpy)
+
 * Data format:
-
-  * .csv (delimiter=";")
-  * Named like this: "202302A.CSV" with '2023' as the year; '02' as month
-
+* `.csv` files with `;` as delimiter
+    * Files should be named like this: `202302A.CSV`
+        * `2023` = year
+        * `02` = month
 
 
 ### Installing
@@ -47,19 +48,15 @@ So please contribute!!!
 
 ```
 
-git pull https://github.com/Benedikt3141/ClimateDiagramGenerator.git
+git clone https://github.com/Benedikt3141/ClimateDiagramGenerator.git
 
 ```
 
-
+Install the required libraries:
 
 ```
 
-pip install pandas
-
-pip install matplot
-
-pip install numpy
+pip install pandas matplot numpy
 
 ```
 
@@ -69,7 +66,7 @@ pip install numpy
 
 
 
-run program via terminal or perfered IDE
+Run program via terminal or perfered IDE
 
 
 
@@ -82,7 +79,5 @@ run program via terminal or perfered IDE
 
 
 ## AI Usage
-
-Don't blame me too much this project is coded without AI so there might be better solutions than the ones I found. I only used AI error code research
- 
+This project was coded without AI assistance. AI was only used for error-code research.
 
